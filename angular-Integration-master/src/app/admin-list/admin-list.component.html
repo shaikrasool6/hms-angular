@@ -1,0 +1,169 @@
+
+  <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+      
+         <!-- <a [routerLink]="['/hospitals']" class="navbar-brand">Hospital List</a>-->
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a [routerLink]="['/users']">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                    <li> <a [routerLink]="['/users']" ><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- side menu -->
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 col-sm-4 sidebar1">
+        <div class="logo">
+          <img src="/assets/images/name.png" width="100" height="100" class="img-responsive center-block"
+            alt="Logo">
+        </div>
+        <br>
+        <div class="left-navigation" class="collapse navbar-collapse">
+          <ul class="list">
+			<h5><strong>WHEREABOUTS</strong></h5>
+      <li [routerLink]="['/adminsPro']">Admin</li>
+      <li [routerLink]="['/hospitals']">Hospital</li>
+      <li [routerLink]="['/dr']"> Doctor</li>
+
+            <li>Patient</li>
+            <li>Pharmacy</li>
+          </ul>
+          <br>
+          <ul class="list">
+            <h5><strong>HOBBIES</strong></h5>
+            <li>Hiking</li>
+            <li>Rafting</li>
+            <li>Badminton</li>
+            <li>Tennis</li>
+            <li>Sketching</li>
+            <li>Horse Riding</li>
+          </ul>
+        </div>
+      </div>
+      
+
+<!--Profile details-->
+
+
+      <hr style="margin-top:0px;">
+                      <h3 style="margin:20px 0px; color:#818da1; font-weight:200;">
+                          <i class="entypo-right-circled"></i>
+                          Manage Profile                </h3>
+      
+          <div  class="col-md-10 col-sm-8 main-content">
+              <div class="panel panel-primary">
+                  <div class="panel-heading">
+                      <div class="panel-title">
+                          <h4>Edit Profile</h4>
+                      </div>
+                  </div>
+                  <div class="panel-body">
+                    <form  class="form-horizontal form-groups validate" target="_top"  accept-charset="utf-8" >
+                      <div *ngFor="let a of adminsPro">
+                                     
+                                            <div class="form-group">
+                                  <label class="col-sm-3 control-label">Name</label>
+                                  <div class="col-sm-5">
+                                      <input type="text" class="form-control" name="name" value="{{ a.adminName }}" [disabled]=true required="">
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label class="col-sm-3 control-label">Email</label>
+                                  <div class="col-sm-5">
+                                      <input type="text" class="form-control" name="email" value="{{a.adminEmail }}" [disabled]=true required="">
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-5">
+                                    <button  class="btn btn-success"   data-toggle="modal" data-target="#update" (click)="editAdmin(a)">
+                                        <i class="fa fa-check"></i>&nbsp;
+                                        Edit Profile</button>
+                                </div>
+                                  </div>
+                                        
+                                </div>
+                          </form>
+                        </div>
+              </div>
+          </div>
+       
+        
+      <!--password-->
+     
+          <div class="col-md-10 col-sm-8 main-content">
+              <div class="panel panel-primary">
+                  <div class="panel-heading">
+                      <div class="panel-title">
+                          <h4>Change Password</h4>
+                      </div>
+                  </div>
+                  <div class="panel-body">
+                                                  <form action="http://creativeitem.com/demo/bayanno/index.php/admin/manage_profile/change_password" class="form-horizontal form-groups validate" target="_top" method="post" accept-charset="utf-8" novalidate="novalidate">
+                                  <div class="form-group">
+                                      <label class="col-sm-3 control-label">Current Password</label>
+                                      <div class="col-sm-5">
+                                          <input type="password" class="form-control" name="password" value="" required="">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-3 control-label">New Password</label>
+                                      <div class="col-sm-5">
+                                          <input type="password" class="form-control" name="new_password" value="" required="">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-3 control-label">Confirm New Password</label>
+                                      <div class="col-sm-5">
+                                          <input type="password" class="form-control" name="confirm_new_password" value="" required="">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-5">
+                                        <button type="submit" class="btn btn-success" (click)="editAdmin(admin)">
+                                            <i class="fa fa-check"></i>&nbsp;
+                                            Update Password</button>
+                                    </div>
+                                      </div>
+                              </form>
+                                          </div>
+              </div>
+          </div>
+      
+      
+      <!--EDIT ADMIN DETAILS -->
+      
+          <div id="update" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h4 class="modal-title">Update Details</h4>
+                      </div>
+                        <div class="modal-body">
+                            Id: <input type="text" class="form-control" [disabled]=true [(ngModel)]="admin.id" />
+
+                            Name:<input type="text" name = "name" [(ngModel)]="admin.adminName" class="form-control"/>
+                            Email:<input type="text" name = "email"  [(ngModel)]="admin.adminEmail" class="form-control"/>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" (click)="saveAdmin(admin)"
+                                  data-dismiss="modal">Update</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              </div>
+                        </div>
+                      
+                    </div>
+                </div>
+          </div>
+-->
+        
+   

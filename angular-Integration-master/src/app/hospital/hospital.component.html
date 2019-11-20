@@ -1,0 +1,246 @@
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+     <!-- <a [routerLink]="['/hospitals']" class="navbar-brand">Hospital List</a>-->
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a [routerLink]="['/users']">Home</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+                <li> <a [routerLink]="['/users']" ><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- side menu -->
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-2 col-sm-4 sidebar1">
+    <div class="logo">
+      <img src="/assets/images/name.png" width="100" height="100" class="img-responsive center-block"
+        alt="Logo">
+    </div>
+    <br>
+    <div class="left-navigation" class="collapse navbar-collapse">
+      <ul class="list">
+        <h5><strong>WHEREABOUTS</strong></h5>
+
+        <li [routerLink]="['/adminsPro']">Admin</li>
+        <li [routerLink]="['/hospitals']">Hospital</li>
+        <li [routerLink]="['/dr']"> Doctor</li>
+
+        <li>Patient</li>
+        <li>Pharmacy</li>
+      </ul>
+      <br>
+      <ul class="list">
+        <h5><strong>HOBBIES</strong></h5>
+        <li>Hiking</li>
+        <li>Rafting</li>
+        <li>Badminton</li>
+        <li>Tennis</li>
+        <li>Sketching</li>
+        <li>Horse Riding</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div  class="col-md-10 col-sm-8 main-content">
+
+  <div class="main-content" style="min-height: 886px;">
+
+    <div class="row">
+<div class="col-md-10 col-sm-8 main-content" style="text-align:center;">
+<h2 style="font-weight:200; margin:0px;">Hospital Management System</h2>
+</div>
+
+<!-- Raw Links -->
+<div class="col-md-10 col-sm-8 main-content">
+
+<ul class="list-inline links-list pull-left">
+<!-- Language Selector -->
+<li class="dropdown language-selector">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-close-others="true">
+        <i class="entypo-user"></i> admin                </a>
+</li>
+
+<!-- Message Notifications -->
+        </ul>
+
+
+
+</div>
+
+</div>
+
+<hr style="margin-top:0px;">
+    <h3 style="margin:20px 0px; color:#818da1; font-weight:200;">
+        <i class="entypo-right-circled"></i>
+        Admin Dashboard                </h3>
+
+    <div class="row">
+<div class="col-sm-3">
+    <div class="panel panel-default">
+        <div *ngFor="let dr of dr">
+            <div *ngIf="dr">
+                {{dr.length}}
+              </div>
+
+        </div>
+        <h3 style="font-size:36px;"  [routerLink]="['/hospital/dr']">
+          Doctor <i class="fa fa-user-md" ></i></h3>
+
+
+</div>
+
+</div>
+
+<div class="col-sm-3">
+<a href="http://creativeitem.com/demo/bayanno/index.php/admin/patient">
+<div class="tile-stats tile-white-red">
+    <div class="icon"><i class="fa fa-user"></i></div>
+    <div class="num" data-start="0" data-end="1" data-duration="1500" data-delay="0">1</div>
+    <h3>Patient</h3>
+</div>
+</a>
+</div>
+
+<div class="col-sm-3">
+<a href="http://creativeitem.com/demo/bayanno/index.php/admin/nurse">
+<div class="tile-stats tile-white-aqua">
+    <div class="icon"><i class="fa fa-plus-square"></i></div>
+    <div class="num" data-start="0" data-end="1" data-duration="1500" data-delay="0">1</div>
+    <h3>Nurse</h3>
+</div>
+</a>
+</div>
+
+<div class="col-sm-3">
+<a href="http://creativeitem.com/demo/bayanno/index.php/admin/pharmacist">
+<div class="tile-stats tile-white-blue">
+    <div class="icon"><i class="fa fa-medkit"></i></div>
+    <div class="num" data-start="0" data-end="1" data-duration="1500" data-delay="0">1</div>
+    <h3>Pharmacist</h3>
+</div>
+</a>
+</div>
+</div>
+
+<br>
+
+<div class="row">
+<div class="col-sm-3">
+<a href="http://creativeitem.com/demo/bayanno/index.php/admin/laboratorist">
+<div class="tile-stats tile-white-cyan">
+    <div class="icon"><i class="fa fa-user"></i></div>
+    <div class="num" data-start="0" data-end="1" data-duration="1500" data-delay="0">1</div>
+    <h3>Laboratorist</h3>
+</div>
+</a>
+</div>
+
+<div class="col-sm-3">
+<a href="http://creativeitem.com/demo/bayanno/index.php/admin/accountant">
+<div class="tile-stats tile-white-purple">
+    <div class="icon"><i class="fa fa-money"></i></div>
+    <div class="num" data-start="0" data-end="1" data-duration="1500" data-delay="0">1</div>
+    <h3>Accountant</h3>
+</div>
+</a>
+</div>
+
+<div class="col-sm-3">
+<a href="http://creativeitem.com/demo/bayanno/index.php/admin/payment_history">
+<div class="tile-stats tile-white-pink">
+    <div class="icon"><i class="fa fa-list-alt"></i></div>
+    <div class="num" data-start="0" data-end="0" data-duration="1500" data-delay="0">0</div>
+    <h3>Payment</h3>
+</div>
+</a>
+</div>
+
+<div class="col-sm-3">
+<a href="http://creativeitem.com/demo/bayanno/index.php/admin/medicine">
+<div class="tile-stats tile-white-orange">
+    <div class="icon"><i class="fa fa-medkit"></i></div>
+    <div class="num" data-start="0" data-end="0" data-duration="1500" data-delay="0">0</div>
+    <h3>Medicine</h3>
+</div>
+</a>
+</div>
+</div>
+
+<br>
+
+<div class="row">
+<div class="col-sm-3">
+<a href="http://creativeitem.com/demo/bayanno/index.php/admin/operation_report">
+<div class="tile-stats tile-white-green">
+    <div class="icon"><i class="fa fa-wheelchair"></i></div>
+    <div class="num" data-start="0" data-end="1" data-duration="1500" data-delay="0">1</div>
+    <h3>Operation Report</h3>
+</div>
+</a>
+</div>
+
+<div class="col-sm-3">
+<a href="http://creativeitem.com/demo/bayanno/index.php/admin/birth_report">
+<div class="tile-stats tile-white-brown">
+    <div class="icon"><i class="fa fa-github-alt"></i></div>
+    <div class="num" data-start="0" data-end="0" data-duration="1500" data-delay="0"></div>
+    <h3>Birth Report</h3>
+</div>
+</a>
+</div>
+
+<div class="col-sm-3">
+<a href="http://creativeitem.com/demo/bayanno/index.php/admin/death_report">
+<div class="tile-stats tile-white-plum">
+    <div class="icon"><i class="fa fa-ban"></i></div>
+    <div class="num" data-start="0" data-end="0" data-duration="1500" data-delay="0"></div>
+    <h3>Death Report</h3>
+</div>
+</a>
+</div>
+
+</div>
+</div>
+    <!-- Footer -->
+<footer class="main">
+© 2017 <strong>Hospital Management System</strong>
+<strong class="pull-right"> VERSION 4.0</strong>
+Developed by
+<a href="http://creativeitem.com" target="_blank">Creativeitem</a>
+</footer>
+
+</div>
+
+
+
+
+
+
+
+<h3>from hospital/doctors</h3>
