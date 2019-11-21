@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DoctorService } from '../services/doctor.service';
+import { HospitalService } from '../services/hospital.service';
+import { Hospital } from '../models/hospital';
 
 @Component({
   selector: 'app-hospital',
@@ -7,16 +9,21 @@ import { DoctorService } from '../services/doctor.service';
   styleUrls: ['./hospital.component.css']
 })
 export class HospitalComponent implements OnInit {
-
-  hospital: any =[];
-
-  dr: any = [];
-
-  constructor(private doctorService:DoctorService,) { }
+  hospital = new Hospital();
+  dr: any=[];
+  constructor( private doctorService:DoctorService, private hospitalService:HospitalService) { }
 
   ngOnInit() {
-    this.getDoctor();
+  this.hospitalService.getOneHospital(this.hospital).subscribe((response) => {
+
+    if(response !=null){
+      if(this.hospital.hospId != undefined){
+        this.getDoctor();
+      }
+    }
+  })
   }
+
   getDoctor = () => {
 
     this.doctorService.getAllDoctors().subscribe((response) => {

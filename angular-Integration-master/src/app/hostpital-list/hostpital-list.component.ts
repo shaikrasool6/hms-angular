@@ -20,6 +20,7 @@ export class HostpitalListComponent implements OnInit {
   constructor(private hospitalService: HospitalService, private toastrService: ToastrProvider) { }
 
   ngOnInit() {
+
     this.getHospital();
   }
 

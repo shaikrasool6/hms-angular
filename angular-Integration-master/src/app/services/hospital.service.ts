@@ -28,5 +28,9 @@ export class HospitalService {
   deleteHospital = (hospital) => {
     return this.http.delete(`${this.url.apiBaseUrl}hospital/deleteHospital/${hospital.hospId}`);
   }
+
+  getOneHospital = (hospital) => {
+    return this.http.get(`${this.url.apiBaseUrl}hospital/hospitalId/${hospital.hospId}`);
+  }
 }
 

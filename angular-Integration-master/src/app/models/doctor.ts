@@ -3,6 +3,6 @@ export class Doctor{
     name: string;
     email: string;
     phone: string;
-    department: string;
+    deparment: string;
     address: string;
 }

@@ -54,6 +54,7 @@ export class DoctorComponent implements OnInit {
         this.getDoctor();
       }
     },(error) => {
+      console.log("something is wrong")
       alert(error.error.error[0])
     })
   }
@@ -62,6 +63,7 @@ editDoctor = (doctor) => {
   this.doctorService.editDoctor(doctor).subscribe(response => {
     this.getDoctor();
   },(error) => {
+    console.log("something is wrong")
     alert(error.error.error[0]);
   })
 }

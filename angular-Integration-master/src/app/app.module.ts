@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-import { ToastrModule } from 'ngx-toastr'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 import { NgModule, Component } from '@angular/core';
 
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -29,7 +29,7 @@ const appRoutes: Routes = [
   { path: 'adminsPro', component: AdminListComponent},
   { path: 'hospital', component: HospitalComponent},
   { path: 'dr', component: DoctorComponent},
-  
+
   { path: '',
     redirectTo: '/users',
     pathMatch: 'full'
@@ -53,7 +53,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,  
+    BrowserAnimationsModule,
     FormsModule,
     NgxPaginationModule,
     ToastrModule.forRoot(),
