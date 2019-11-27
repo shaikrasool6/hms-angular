@@ -1,5 +1,5 @@
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -37,8 +37,7 @@
         <li [routerLink]="['/adminsPro']">Admin</li>
         <li [routerLink]="['/hospitals']">Hospital</li>
         <li [routerLink]="['/dr']"> Doctor</li>
-
-        <li>Patient</li>
+        <li [routerLink]="['/pnt']">Patient</li>
         <li>Pharmacy</li>
       </ul>
       <br>
@@ -110,13 +109,11 @@
 </div>
 
 <div class="col-sm-3">
-<a href="http://creativeitem.com/demo/bayanno/index.php/admin/patient">
-<div class="tile-stats tile-white-red">
-    <div class="icon"><i class="fa fa-user"></i></div>
-    <div class="num" data-start="0" data-end="1" data-duration="1500" data-delay="0">1</div>
-    <h3>Patient</h3>
+<div class="panel panel-default">
+
+    <h3  style="font-size:36px;" [routerLink]="['/pnt']"> Patient <i class="fa fa-user"></i></h3>
 </div>
-</a>
+
 </div>
 
 <div class="col-sm-3">

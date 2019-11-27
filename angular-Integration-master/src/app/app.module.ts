@@ -21,6 +21,7 @@ import { AdminListComponent } from './admin-list/admin-list.component';
 import { HospitalComponent } from './hospital/hospital.component';
 import { Hospital } from './models/hospital';
 import { DoctorComponent } from './doctor/doctor.component';
+import { PatientComponent } from './patient/patient.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: AppComponent },
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'adminsPro', component: AdminListComponent},
   { path: 'hospital', component: HospitalComponent},
   { path: 'dr', component: DoctorComponent},
+  { path: 'pnt', component:PatientComponent},
 
   { path: '',
     redirectTo: '/users',
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     SearchPipe,
     AdminListComponent,
     HospitalComponent,
-    DoctorComponent
+    DoctorComponent,
+    PatientComponent
   ],
   imports: [
     BrowserModule,

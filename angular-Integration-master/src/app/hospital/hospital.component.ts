@@ -14,14 +14,7 @@ export class HospitalComponent implements OnInit {
   constructor( private doctorService:DoctorService, private hospitalService:HospitalService) { }
 
   ngOnInit() {
-  this.hospitalService.getOneHospital(this.hospital).subscribe((response) => {
-
-    if(response !=null){
-      if(this.hospital.hospId != undefined){
-        this.getDoctor();
-      }
-    }
-  })
+ this.getDoctor();
   }
 
   getDoctor = () => {

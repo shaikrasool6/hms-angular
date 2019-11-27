@@ -14,13 +14,15 @@ export class DoctorComponent implements OnInit {
 
 
   doctor = new  Doctor();
-
+  hospital =new Hospital();
   dr: any = [];
 
-  constructor(private doctorService:DoctorService,  private toastrService: ToastrProvider) { }
+  constructor(private doctorService:DoctorService, private toastrService: ToastrProvider) { }
 
   ngOnInit() {
+
     this.getDoctor();
+
   }
 
   getDoctor = () => {
@@ -35,9 +37,10 @@ export class DoctorComponent implements OnInit {
   }
   addNew = () => {
 
-          this.doctor = new Doctor();
+    this.doctor = new Doctor();
 
-    }
+
+  }
 
 
   saveDoctor = (doctor) => {
@@ -45,7 +48,7 @@ export class DoctorComponent implements OnInit {
     this.doctorService.addNewDoctor(this.doctor).subscribe((response) => {
 
       if(response !=null) {
-        if(this.doctor.id == undefined) {
+        if(this.doctor.drId == undefined) {
           this.toastrService.successmsg("doctor added successfully..");
         }
         else{
@@ -59,6 +62,7 @@ export class DoctorComponent implements OnInit {
     })
   }
 editDoctor = (doctor) => {
+  console.log(doctor)
   this.doctor = doctor;
   this.doctorService.editDoctor(doctor).subscribe(response => {
     this.getDoctor();

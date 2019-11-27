@@ -57,6 +57,7 @@ export class HostpitalListComponent implements OnInit {
 
 
   editHospital = (hospital) => {
+    console.log(hospital  )
     this.hospital = hospital;
     this.hospitalService.editHopital(hospital).subscribe(response => {
       this.getHospital();

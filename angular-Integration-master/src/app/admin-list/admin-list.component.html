@@ -7,7 +7,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-      
+
          <!-- <a [routerLink]="['/hospitals']" class="navbar-brand">Hospital List</a>-->
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
@@ -32,11 +32,10 @@
         <div class="left-navigation" class="collapse navbar-collapse">
           <ul class="list">
 			<h5><strong>WHEREABOUTS</strong></h5>
-      <li [routerLink]="['/adminsPro']">Admin</li>
-      <li [routerLink]="['/hospitals']">Hospital</li>
-      <li [routerLink]="['/dr']"> Doctor</li>
-
-            <li>Patient</li>
+            <li [routerLink]="['/adminsPro']">Admin</li>
+            <li [routerLink]="['/hospitals']">Hospital</li>
+            <li [routerLink]="['/dr']"> Doctor</li>
+            <li [routerLink]="['/pnt']">Patient</li>
             <li>Pharmacy</li>
           </ul>
           <br>
@@ -51,7 +50,7 @@
           </ul>
         </div>
       </div>
-      
+
 
 <!--Profile details-->
 
@@ -60,7 +59,7 @@
                       <h3 style="margin:20px 0px; color:#818da1; font-weight:200;">
                           <i class="entypo-right-circled"></i>
                           Manage Profile                </h3>
-      
+
           <div  class="col-md-10 col-sm-8 main-content">
               <div class="panel panel-primary">
                   <div class="panel-heading">
@@ -71,7 +70,7 @@
                   <div class="panel-body">
                     <form  class="form-horizontal form-groups validate" target="_top"  accept-charset="utf-8" >
                       <div *ngFor="let a of adminsPro">
-                                     
+
                                             <div class="form-group">
                                   <label class="col-sm-3 control-label">Name</label>
                                   <div class="col-sm-5">
@@ -91,16 +90,16 @@
                                         Edit Profile</button>
                                 </div>
                                   </div>
-                                        
+
                                 </div>
                           </form>
                         </div>
               </div>
           </div>
-       
-        
+
+
       <!--password-->
-     
+
           <div class="col-md-10 col-sm-8 main-content">
               <div class="panel panel-primary">
                   <div class="panel-heading">
@@ -139,10 +138,10 @@
                                           </div>
               </div>
           </div>
-      
-      
+
+
       <!--EDIT ADMIN DETAILS -->
-      
+
           <div id="update" class="modal fade" role="dialog">
               <div class="modal-dialog">
                   <div class="modal-content">
@@ -160,10 +159,9 @@
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                               </div>
                         </div>
-                      
+
                     </div>
                 </div>
           </div>
 -->
-        
-   
+

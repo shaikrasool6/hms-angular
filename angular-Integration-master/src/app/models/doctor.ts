@@ -1,8 +1,10 @@
 export class Doctor{
-    id? : number;
+    drId? : number;
     name: string;
     email: string;
     phone: string;
     deparment: string;
     address: string;
+    hospId?: number;
+
 }

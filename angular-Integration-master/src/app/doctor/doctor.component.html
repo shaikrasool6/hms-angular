@@ -39,7 +39,7 @@
   <li [routerLink]="['/adminsPro']">Admin</li>
         <li [routerLink]="['/hospitals']">Hospital</li>
         <li [routerLink]="['/dr']"> Doctor</li>
-        <li>Patient</li>
+        <li [routerLink]="['/pnt']">Patient</li>
         <li>Pharmacy</li>
       </ul>
       <br>
@@ -63,22 +63,22 @@
   <table class="table table-striped">
   <thead>
       <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Action</th>
+        <th class="text-center">Id</th>
+        <th class="text-center">Name</th>
+        <th class="text-center">Email</th>
+        <th class="text-center">Department</th>
+        <th class="text-center">Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let dr of dr  | paginate: { itemsPerPage: 5, currentPage: p }">
-           <td>{{dr.id }}</td>
-           <td>{{dr.name }}</td>
-           <td>{{dr.email }}</td>
-           <td>{{dr .phone }}</td>
-        <td><button class="btn btn-info" (click)="editDoctor(dr)" data-toggle="modal" data-target="#update">
+      <tr *ngFor="let d of dr  | paginate: { itemsPerPage: 5, currentPage: p }">
+           <td>{{ d.drId }}</td>
+           <td>{{ d.name }}</td>
+           <td>{{ d.email }}</td>
+           <td>{{ d.deparment }}</td>
+        <td><button class="btn btn-info" (click)="editDoctor(d)" data-toggle="modal" data-target="#update">
             <span class="glyphicon glyphicon-edit"></span> Edit</button>&nbsp;&nbsp;&nbsp;
-          <button class="btn btn-danger" (click)="deleteDoctor(dr)">
+          <button class="btn btn-danger" (click)="deleteDoctor(d)">
             <span class="glyphicon glyphicon-trash"></span> Delete</button></td>
           </tr>
         </tbody>
@@ -100,6 +100,7 @@
 						<h4 class="modal-title">Add Doctor</h4>
 					</div>
 					<div class="modal-body">
+            Hospital Id: <input type="text" class="form-control" [(ngModel)]="hospital.hospId" />
 
 						Name: <input type="text" class="form-control" [(ngModel)]="doctor.name" />
 
@@ -133,7 +134,8 @@
 						<h4 class="modal-title">Update Details</h4>
 					</div>
 					<div class="modal-body">
-                        Id: <input type="text" class="form-control" [disabled]=true [(ngModel)]="doctor.id" />
+
+                        Id: <input type="text" class="form-control" [disabled]=true [(ngModel)]="doctor.drId" />
 
                         Name: <input type="text" class="form-control" [(ngModel)]="doctor.name" />
 
