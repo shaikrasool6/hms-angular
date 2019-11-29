@@ -25,6 +25,8 @@ getOnePatient = (patient) => {
 deletePatient = (patient) => {
   return this.http.delete(`${this.url.apiBaseUrl}patient/patientId/${patient.pid}`);
 }
-
+getPdf = (patient) => {
+  return this.http.get(`${this.url.apiBaseUrl}patient/pdf/${patient.pid}`);
+}
 
 }

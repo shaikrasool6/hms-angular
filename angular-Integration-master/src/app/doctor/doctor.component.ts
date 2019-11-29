@@ -4,6 +4,7 @@ import { ToastrProvider } from '../providers/toastr.service';
 import { Doctor } from '../models/doctor';
 import { HospitalService } from '../services/hospital.service';
 import { Hospital } from '../models/hospital';
+import { Patient } from '../models/patient';
 declare var swal: any;
 @Component({
   selector: 'app-doctor',

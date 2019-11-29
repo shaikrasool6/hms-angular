@@ -6,6 +6,7 @@ import { Hospital } from '../models/hospital';
 @Component({
   selector: 'app-hospital',
   templateUrl: './hospital.component.html',
+
   styleUrls: ['./hospital.component.css']
 })
 export class HospitalComponent implements OnInit {
@@ -14,7 +15,7 @@ export class HospitalComponent implements OnInit {
   constructor( private doctorService:DoctorService, private hospitalService:HospitalService) { }
 
   ngOnInit() {
- this.getDoctor();
+  //  this.getDoctor();
   }
 
   getDoctor = () => {
@@ -27,4 +28,6 @@ export class HospitalComponent implements OnInit {
    })
 
  }
+
+
 }

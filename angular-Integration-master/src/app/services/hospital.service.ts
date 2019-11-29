@@ -32,5 +32,6 @@ export class HospitalService {
   getOneHospital = (hospital) => {
     return this.http.get(`${this.url.apiBaseUrl}hospital/hospitalId/${hospital.hospId}`);
   }
+
 }
 

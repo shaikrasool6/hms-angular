@@ -4,6 +4,7 @@ export class Patient{
   gender: String;
   email: String;
   phone:number;
+  address: String;
   dateOfBirth: Date;
   age: number;
   bloodGroup: String;
