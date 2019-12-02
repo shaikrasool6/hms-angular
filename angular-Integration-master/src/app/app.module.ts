@@ -20,8 +20,10 @@ import { SearchPipe} from './providers/search.pipe';
 import { AdminListComponent } from './admin-list/admin-list.component';
 import { HospitalComponent } from './hospital/hospital.component';
 import { Hospital } from './models/hospital';
-import { DoctorComponent } from './doctor/doctor.component';
+import { DoctorListComponent } from './doctor-list/doctor-list.component';
 import { PatientComponent } from './patient/patient.component';
+import { DoctorComponent } from './doctor/doctor.component';
+
 
 const appRoutes: Routes = [
   { path: 'home', component: AppComponent },
@@ -29,9 +31,9 @@ const appRoutes: Routes = [
   { path: 'users',  component: UserComponent },
   { path: 'adminsPro', component: AdminListComponent},
   { path: 'hospital', component: HospitalComponent},
-  { path: 'dr', component: DoctorComponent},
+  { path: 'dr', component: DoctorListComponent},
   { path: 'pnt', component:PatientComponent},
-
+  { path: 'doctor', component:DoctorComponent},
   { path: '',
     redirectTo: '/users',
     pathMatch: 'full'
@@ -49,8 +51,9 @@ const appRoutes: Routes = [
     SearchPipe,
     AdminListComponent,
     HospitalComponent,
+    DoctorListComponent,
     DoctorComponent,
-    PatientComponent
+    PatientComponent,
   ],
   imports: [
     BrowserModule,
