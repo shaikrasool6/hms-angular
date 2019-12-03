@@ -1,0 +1,51 @@
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+
+        <ul class="nav navbar-nav">
+          <li class="active"><a [routerLink]="['/users']">Home</a></li>
+          <li><a data-toggle="modal" data-target="#myModal" >Add Nurse</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li> <a [routerLink]="['/users']" ><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+  </ul>
+      </div>
+
+  </nav>
+  <!-- side menu -->
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-2 col-sm-4 sidebar1">
+    <div class="logo">
+      <img src="/assets/images/name.png" width="100" height="100" class="img-responsive center-block"
+        alt="Logo">
+    </div>
+    <br>
+    <div class="left-navigation" class="collapse navbar-collapse">
+      <ul class="list">
+  <h5><strong>WHEREABOUTS</strong></h5>
+
+        <li [routerLink]="['/adminsPro']">Admin</li>
+        <li [routerLink]="['/hospitals']">Hospital</li>
+        <li [routerLink]="['/dr']"> Doctor</li>
+        <li [routerLink]="['/patient-list']">Patient</li>
+        <li [routerLink]="['/nurse-list']">Nurse</li>
+
+        <li>Pharmacy</li>
+      </ul>
+      <br>
+      <ul class="list">
+        <h5><strong>HOBBIES</strong></h5>
+        <li>Hiking</li>
+        <li>Rafting</li>
+        <li>Badminton</li>
+        <li>Tennis</li>
+        <li>Sketching</li>
+        <li>Horse Riding</li>
+      </ul>
+      </div>
+    </div>
+
+	   </div>
+</div>

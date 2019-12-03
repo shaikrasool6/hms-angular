@@ -21,8 +21,11 @@ import { AdminListComponent } from './admin-list/admin-list.component';
 import { HospitalComponent } from './hospital/hospital.component';
 import { Hospital } from './models/hospital';
 import { DoctorListComponent } from './doctor-list/doctor-list.component';
-import { PatientComponent } from './patient/patient.component';
 import { DoctorComponent } from './doctor/doctor.component';
+import { PatientListComponent } from './patient-list/patient-list.component';
+import { PatientComponent } from './patient/patient.component';
+import { NurseListComponent } from './nurse-list/nurse-list.component';
+import { NurseComponent } from './nurse/nurse.component';
 
 
 const appRoutes: Routes = [
@@ -32,8 +35,10 @@ const appRoutes: Routes = [
   { path: 'adminsPro', component: AdminListComponent},
   { path: 'hospital', component: HospitalComponent},
   { path: 'dr', component: DoctorListComponent},
-  { path: 'pnt', component:PatientComponent},
-  { path: 'doctor', component:DoctorComponent},
+  { path: 'patient-list', component: PatientListComponent },
+  { path: 'doctor', component: DoctorComponent},
+  { path: 'nurse-list', component:NurseListComponent},
+  { path: "patient", component:PatientComponent},
   { path: '',
     redirectTo: '/users',
     pathMatch: 'full'
@@ -53,7 +58,10 @@ const appRoutes: Routes = [
     HospitalComponent,
     DoctorListComponent,
     DoctorComponent,
+    PatientListComponent,
+    NurseListComponent,
     PatientComponent,
+    NurseComponent,
   ],
   imports: [
     BrowserModule,

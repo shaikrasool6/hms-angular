@@ -30,14 +30,15 @@
         alt="Logo">
     </div>
     <br>
-    <div class="left-navigation" class="collapse navbar-collapse">
-      <ul class="list">
+    <div class="left-navigation" class="collapse navbar-collapse" >
+      <ul class="list" align="left">
         <h5><strong>WHEREABOUTS</strong></h5>
 
         <li [routerLink]="['/adminsPro']">Admin</li>
         <li [routerLink]="['/hospitals']">Hospital</li>
         <li [routerLink]="['/dr']"> Doctor</li>
-        <li [routerLink]="['/pnt']">Patient</li>
+        <li [routerLink]="['/patient-list']">Patient</li>
+        <li [routerLink]="['/nurse-list']">Nurse</li>
         <li>Pharmacy</li>
       </ul>
       <br>
@@ -110,21 +111,15 @@
 
 <div class="col-sm-3">
 <div class="panel panel-default">
-
     <h3  style="font-size:36px;" [routerLink]="['/pnt']"> Patient <i class="fa fa-user"></i></h3>
 </div>
-
 </div>
 
 <div class="col-sm-3">
-<a href="http://creativeitem.com/demo/bayanno/index.php/admin/nurse">
-<div class="tile-stats tile-white-aqua">
-    <div class="icon"><i class="fa fa-plus-square"></i></div>
-    <div class="num" data-start="0" data-end="1" data-duration="1500" data-delay="0">1</div>
-    <h3>Nurse</h3>
-</div>
-</a>
-</div>
+  <div class="panel panel-default">
+      <h3  style="font-size:36px;" [routerLink]="['/nurse-list']"> Nurse <i class="fa fa-plus-square"></i></h3>
+  </div>
+  </div>
 
 <div class="col-sm-3">
 <a href="http://creativeitem.com/demo/bayanno/index.php/admin/pharmacist">

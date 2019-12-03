@@ -109,7 +109,13 @@ textarea {
     background-color: transparent;
   }
 }
-
+.page-container .sidebar-menu .logo-env {
+  width: 100%;
+  padding: 21px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 
 
