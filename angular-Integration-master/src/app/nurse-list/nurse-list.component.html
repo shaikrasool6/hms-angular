@@ -5,7 +5,7 @@
 
         <ul class="nav navbar-nav">
           <li class="active"><a [routerLink]="['/users']">Home</a></li>
-          <li><a data-toggle="modal" data-target="#myModal" >Add Nurse</a></li>
+          <li><a data-toggle="modal" data-target="#myModal" (click)="addNew()" >Add Nurse</a></li>
   </ul>
   <ul class="nav navbar-nav navbar-right">
     <li> <a [routerLink]="['/users']" ><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
@@ -28,7 +28,7 @@
 
         <li [routerLink]="['/adminsPro']">Admin</li>
         <li [routerLink]="['/hospitals']">Hospital</li>
-        <li [routerLink]="['/dr']"> Doctor</li>
+        <li [routerLink]="['/doctor-list']"> Doctor</li>
         <li [routerLink]="['/patient-list']">Patient</li>
         <li [routerLink]="['/nurse-list']">Nurse</li>
 
@@ -46,6 +46,99 @@
       </ul>
       </div>
     </div>
+
+
+
+    <div class="col-md-10 col-sm-8 main-content">
+      <table class="table table-striped">
+
+          <thead>
+              <tr>
+                <th class="text-center">Id</th>
+                <th class="text-center">Name</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Phone</th>
+                <th class="text-center">Action</th>
+              </tr>
+          </thead>
+        <tbody>
+          <tr *ngFor="let n of nurs  | paginate: { itemsPerPage: 5, currentPage: p }">
+               <td>{{ n.nId }}</td>
+               <td>{{ n.name }}</td>
+               <td>{{ n.email }}</td>
+               <td>{{ n.phone }}</td>
+               <td>
+                 <button class="btn btn-info" (click)="editNurse(n)" data-toggle="modal" data-target="#update">
+                      <span class="glyphicon glyphicon-edit"></span> Edit
+                 </button>&nbsp;&nbsp;&nbsp;
+
+                 <button class="btn btn-danger" (click)="deleteNurse(n)">
+                      <span class="glyphicon glyphicon-trash"></span> Delete
+                 </button>
+               </td>
+
+              </tr>
+        </tbody>
+      </table>
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+        </div>
+
+        	<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Add Nurse</h4>
+					</div>
+					<div class="modal-body">
+						Name: <input type="text" class="form-control" [(ngModel)]="nurse.name" />
+
+						Email: <input type="text" class="form-control" [(ngModel)]="nurse.email" />
+
+						Contact: <input type="text" class="form-control" [(ngModel)]="nurse.phone" />
+
+						Address: <input type="text" class="form-control" [(ngModel)]="nurse.address" />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" (click)="saveNurse(nurse)"
+							data-dismiss="modal">Save</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!-- edit -->
+  <div id="update" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Update Details</h4>
+        </div>
+        <div class="modal-body">
+                      Id: <input type="text" class="form-control" [disabled]=true [(ngModel)]="nurse.nId" />
+
+                      Name: <input type="text" class="form-control" [(ngModel)]="nurse.name" />
+
+                      Email: <input type="text" class="form-control" [(ngModel)]="nurse.email" />
+
+                      Contact: <input type="text" class="form-control" [(ngModel)]="nurse.phone" />
+
+                      Address: <input type="text" class="form-control" [(ngModel)]="nurse.address" />
+                  </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="saveNurse(nurse)"
+            data-dismiss="modal">Update</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 	   </div>
 </div>

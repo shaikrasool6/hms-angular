@@ -36,7 +36,7 @@
 
         <li [routerLink]="['/adminsPro']">Admin</li>
         <li [routerLink]="['/hospitals']">Hospital</li>
-        <li [routerLink]="['/dr']"> Doctor</li>
+        <li [routerLink]="['/doctor-list']"> Doctor</li>
         <li [routerLink]="['/patient-list']">Patient</li>
         <li [routerLink]="['/nurse-list']">Nurse</li>
         <li>Pharmacy</li>
@@ -102,7 +102,7 @@
               </div>
 
         </div>
-        <h3 style="font-size:36px;"  [routerLink]="['/dr']" >
+        <h3 style="font-size:36px;"  [routerLink]="['/hospital/doctor-list']" >
           Doctor <i class="fa fa-user-md" ></i></h3>
 
 
@@ -111,13 +111,13 @@
 
 <div class="col-sm-3">
 <div class="panel panel-default">
-    <h3  style="font-size:36px;" [routerLink]="['/pnt']"> Patient <i class="fa fa-user"></i></h3>
+    <h3  style="font-size:36px;" [routerLink]="['/hospital/patient-list']"> Patient <i class="fa fa-user"></i></h3>
 </div>
 </div>
 
 <div class="col-sm-3">
   <div class="panel panel-default">
-      <h3  style="font-size:36px;" [routerLink]="['/nurse-list']"> Nurse <i class="fa fa-plus-square"></i></h3>
+      <h3  style="font-size:36px;" [routerLink]="['/hospital/nurse-list']"> Nurse <i class="fa fa-plus-square"></i></h3>
   </div>
   </div>
 

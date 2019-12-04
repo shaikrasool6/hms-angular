@@ -11,10 +11,11 @@ import { Hospital } from '../models/hospital';
 export class HospitalComponent implements OnInit {
   hospital = new Hospital();
   dr: any=[];
+  hospitals: any = [];
   constructor( private doctorService:DoctorService, private hospitalService:HospitalService) { }
 
   ngOnInit() {
-  //  this.getDoctor();
+  this.getDoctorsBasedOnHospitals(this.hospital);
   }
 
   getDoctor = () => {
@@ -27,6 +28,15 @@ export class HospitalComponent implements OnInit {
    })
 
  }
+ getDoctorsBasedOnHospitals = (hospital) => {
+  this.hospitalService.getOneHospital(this.hospital.hospId).subscribe((response) => {
+   this.hospitals = response;
+   console.log(response);
+   console.log(this.hospitals);
+ },
+ (error) => {
+   console.log(error);
+ })
 
-
+}
 }
