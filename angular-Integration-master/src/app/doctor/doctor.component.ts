@@ -11,7 +11,7 @@ export class DoctorComponent implements OnInit {
 
   constructor(private doctorService:DoctorService, private toastrService: ToastrProvider) { }
   doctor = new Doctor();
-  doc: any= [];
+  doctors: any= [];
   ngOnInit() {
 
   }
@@ -19,28 +19,12 @@ export class DoctorComponent implements OnInit {
   getDoctor = (doctor) =>{
     this.doctorService.getOneDoctor(this.doctor).subscribe((response)=> {
       if(this.doctor.drId !=undefined){
+        this.doctors =response;
         this.toastrService.successmsg(this.doctor.name+ "updated successfully");
       }
     })
   }
-  saveDoctor = (doctor) => {
 
-    this.doctorService.addNewDoctor(this.doctor).subscribe((response) => {
-
-      if(response !=null) {
-        if(this.doctor.drId == undefined) {
-          this.toastrService.successmsg("doctor added successfully..");
-        }
-        else{
-          this.toastrService.successmsg(doctor.name+" updated successfully");
-        }
-        this.getDoctor(doctor);
-      }
-    },(error) => {
-      console.log("something is wrong")
-      alert(error.error.error[0])
-    })
-  }
   editDoctor = (doctor) => {
     console.log(doctor)
     this.doctor = doctor;

@@ -34,7 +34,7 @@ const appRoutes: Routes = [
   { path: 'users',  component: UserComponent },
   { path: 'adminsPro', component: AdminListComponent},
   { path: 'hospital', component: HospitalComponent},
-  { path: 'hospital/doctor-list', component: DoctorListComponent},
+  { path: 'hospital/:hospId/doctor-list', component: DoctorListComponent},
   { path: 'hospital/patient-list', component: PatientListComponent },
   { path: 'hospital/nurse-list', component:NurseListComponent},
   { path: 'doctor-list', component: DoctorListComponent},

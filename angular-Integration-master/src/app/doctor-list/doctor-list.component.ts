@@ -30,6 +30,7 @@ export class DoctorListComponent implements OnInit {
 
      this.doctorService.getAllDoctors().subscribe((response) => {
       this.dr = response;
+      console.log(response);
     },
     (error) => {
       console.log(error);
@@ -58,8 +59,7 @@ export class DoctorListComponent implements OnInit {
         this.getDoctor();
       }
     },(error) => {
-      console.log("something is wrong")
-      alert(error.error.error[0])
+       alert(error.error.error[0])
     })
   }
 editDoctor = (doctor) => {

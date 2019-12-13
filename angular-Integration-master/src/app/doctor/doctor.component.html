@@ -16,7 +16,6 @@ class="img-responsive center-block"alt="Logo">
     <li [routerLink]="['/doctor/patient-list']">Patient</li>
     <li>Bed Allotment</li>
     <li>Blood Bank</li>
-    <li (click)="doc" data-toggle="modal" data-target="#update">Profile</li>
   </ul><br>
 
 
@@ -128,11 +127,11 @@ class="img-responsive center-block"alt="Logo">
 
       <form role="form" class="form-horizontal form-groups" >
 
-          <div class="form-group">
+          <div class="form-group" *ngIf="doctors">
               <label for="field-1" class="col-sm-3 control-label">Doctor's Id</label>
 
               <div class="col-sm-5">
-                  <input type="text" name="drId" class="form-control" id="field-1" [disabled]=true [(ngModel)]="doctor.drId">
+                  <input type="text" name="drId" class="form-control" id="field-1" [disabled]=true [(ngModel)]="doctors.drId">
               </div>
           </div>
 
@@ -278,7 +277,7 @@ Developed by
 
                       </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" (click)="saveDoctor(doctor)"
+              <button type="button" class="btn btn-primary"
                 data-dismiss="modal">Update</button>
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>

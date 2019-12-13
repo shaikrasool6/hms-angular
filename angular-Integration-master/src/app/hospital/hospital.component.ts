@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DoctorService } from '../services/doctor.service';
 import { HospitalService } from '../services/hospital.service';
 import { Hospital } from '../models/hospital';
+import { Doctor } from '../models/doctor';
+
 
 @Component({
   selector: 'app-hospital',
@@ -10,27 +12,20 @@ import { Hospital } from '../models/hospital';
 })
 export class HospitalComponent implements OnInit {
   hospital = new Hospital();
-  dr: any=[];
+  dr : any =[];
   hospitals: any = [];
+
   constructor( private doctorService:DoctorService, private hospitalService:HospitalService) { }
 
   ngOnInit() {
-  this.getDoctorsBasedOnHospitals(this.hospital);
+
   }
 
-  getDoctor = () => {
 
-    this.doctorService.getAllDoctors().subscribe((response) => {
-     this.dr = response;
-   },
-   (error) => {
-     console.log(error);
-   })
 
- }
  getDoctorsBasedOnHospitals = (hospital) => {
-  this.hospitalService.getOneHospital(this.hospital.hospId).subscribe((response) => {
-   this.hospitals = response;
+   this.hospitalService.getOneHospital(hospital.hospId).subscribe((response) => {
+  this.hospitals = response;
    console.log(response);
    console.log(this.hospitals);
  },
@@ -38,5 +33,7 @@ export class HospitalComponent implements OnInit {
    console.log(error);
  })
 
+  }
 }
-}
+
+

@@ -63,7 +63,7 @@
         <tr *ngFor="let u of users | filter : search | paginate: { itemsPerPage: 5, currentPage: p }">
           <td>{{u.hospId }}</td>
           <td [routerLink]="['/hospital']">{{u.name }}</td>
-          <td>{{u.email }}</td>
+          <td >{{u.email }}</td>
           <td>{{u.phone }}</td>
           <td>{{u.fax }}</td>
           <td><button class="btn btn-info" (click)="editHospital(u)" data-toggle="modal"
